@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique(map: "User_email_key")
+  password  String
+  fullName  String
+  imageUrl  String?
+  passwordChangedAt DateTime?
+  resetPasswordToken String? @unique
+  resetPasswordTokenExpires  DateTime?
+  tasks Todo[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime?
+}
+
+model Todo {
+  id        Int      @id @default(autoincrement())
+  title     String
+  desc String?
+  isDone String @default("0")
+  dueDate DateTime?
+  userId    Int
+  user_id Int
+  user User @relation(fields: [user_id], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime?
+  isDeleted Boolean @default(false) //soft delete
+}
+

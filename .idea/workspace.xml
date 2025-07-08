@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="76171ef3-79fd-4757-884d-ffe7c776fc34" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/backend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/todo/dto/UpdateTaskDto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/todo/dto/UpdateTaskDto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/todo/todo.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/todo/todo.service.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/backend/prisma/schema.prisma" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2zD87tauKV491TF5iGrr8rHxXbh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "js.linters.configure.manually.selectedeslint": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "E:\\nestJS\\todoapp\\node_modules\\eslint",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "E:\\nestJS\\todoapp\\backend\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "E:\\nestJS\\todoapp\\backend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\nestJS\todoapp\backend" />
+      <recent name="E:\nestJS\todoapp" />
+      <recent name="E:\nestJS\todoapp\frontend\src" />
+      <recent name="E:\nestJS\todoapp\backend\src\todo\dto" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-WS-251.26094.131" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="76171ef3-79fd-4757-884d-ffe7c776fc34" name="Changes" comment="" />
+      <created>1751254119864</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751254119864</updated>
+      <workItem from="1751254120812" duration="1297000" />
+      <workItem from="1751255660405" duration="16297000" />
+      <workItem from="1751332663320" duration="55000" />
+      <workItem from="1751332773669" duration="2219000" />
+      <workItem from="1751335136746" duration="26482000" />
+      <workItem from="1751422291136" duration="189000" />
+      <workItem from="1751422502653" duration="282000" />
+      <workItem from="1751422797473" duration="981000" />
+      <workItem from="1751426210095" duration="408000" />
+      <workItem from="1751426641374" duration="534000" />
+      <workItem from="1751427218547" duration="14023000" />
+      <workItem from="1751443638633" duration="7531000" />
+      <workItem from="1751469425699" duration="57000" />
+      <workItem from="1751510552087" duration="278000" />
+      <workItem from="1751510844227" duration="10331000" />
+      <workItem from="1751596135997" duration="3077000" />
+      <workItem from="1751599252818" duration="2563000" />
+      <workItem from="1751601856273" duration="5450000" />
+      <workItem from="1751607362988" duration="1568000" />
+      <workItem from="1751609449000" duration="1653000" />
+      <workItem from="1751611145998" duration="162000" />
+      <workItem from="1751611411929" duration="4699000" />
+      <workItem from="1751857180267" duration="8955000" />
+      <workItem from="1751945360884" duration="292000" />
+      <workItem from="1751945665614" duration="18845000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

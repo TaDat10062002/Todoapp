@@ -1,0 +1,21 @@
+my-nextjs-app/
+├── app/                 # Nơi định nghĩa các route và layout (App Router)
+│   ├── layout.tsx       # Layout gốc (dùng cho toàn bộ ứng dụng)
+│   ├── page.tsx         # Trang gốc ("/")
+│   ├── about/           # Tương ứng với route "/about"
+│   │   └── page.tsx
+│   └── dashboard/
+│       ├── layout.tsx   # Layout riêng cho dashboard
+│       └── page.tsx     # Trang "/dashboard"
+├── public/              # Thư mục chứa ảnh, file tĩnh (image, favicon,...)
+├── styles/              # Chứa CSS/SCSS modules hoặc global styles
+│   └── globals.css
+├── components/          # Các component dùng lại được
+│   └── Header.tsx
+├── lib/                 # Các hàm helper, hàm gọi API, cấu hình
+│   └── api.ts
+├── middleware.ts        # Middleware chạy trước khi render (ví dụ auth)
+├── next.config.js       # File cấu hình cho Next.js
+├── package.json
+├── tsconfig.json        # Nếu dùng TypeScript
+└── .env.local           # Biến môi trường

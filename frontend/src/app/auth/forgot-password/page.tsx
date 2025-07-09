@@ -7,8 +7,10 @@ import Link from 'next/link';
 export default function ForgotPasswordPage() {
     return (
         <>
-            <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-black p-4 sm:p-6">
-                <Card className="w-full max-w-md mx-auto rounded-xl shadow-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+            <div
+                className="flex min-h-screen items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-black p-4 sm:p-6">
+                <Card
+                    className="w-full max-w-md mx-auto rounded-xl shadow-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
                     <CardHeader className="space-y-3 text-center p-8 pb-6">
                         <CardTitle className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
                             Forgot Password?
@@ -40,7 +42,7 @@ export default function ForgotPasswordPage() {
                             <div className="text-center text-base text-gray-500 dark:text-gray-400 mt-4">
                                 Remember your password?{" "}
                                 <Link
-                                    href="/login"
+                                    href="/auth/login"
                                     className="font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 underline-offset-4 hover:underline transition-colors duration-200"
                                     prefetch={false}
                                 >

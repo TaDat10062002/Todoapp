@@ -5,17 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76171ef3-79fd-4757-884d-ffe7c776fc34" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/todo/dto/UpdateTaskDto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/todo/dto/UpdateTaskDto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/components/auth/ProtectedRoute.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/providers/ReduxProvider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/todo/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Spinner.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/store/slices/authSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/store/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/auth/auth.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/todo/todo.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/todo/todo.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/forgot-password/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/auth/forgot-password/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/login/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/auth/signup/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/lib/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/auth/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/auth/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/auth.api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/auth.api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/backend/prisma/schema.prisma" root0="FORCE_HIGHLIGHTING" />
@@ -37,6 +58,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "js.linters.configure.manually.selectedeslint": "true",
+    "last_opened_file_path": "E:/nestJS/todoapp/frontend/src/app",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -45,17 +67,21 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "E:\\nestJS\\todoapp\\backend\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "settings.editor.selected.configurable": "actions.on.save",
     "ts.external.directory.path": "E:\\nestJS\\todoapp\\backend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\nestJS\todoapp\frontend\src\app" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\nestJS\todoapp\backend" />
-      <recent name="E:\nestJS\todoapp" />
-      <recent name="E:\nestJS\todoapp\frontend\src" />
-      <recent name="E:\nestJS\todoapp\backend\src\todo\dto" />
+      <recent name="E:\nestJS\todoapp\frontend\src\app\auth" />
+      <recent name="E:\nestJS\todoapp\frontend\src\app\main\home" />
+      <recent name="E:\nestJS\todoapp\frontend\src\app" />
+      <recent name="E:\nestJS\todoapp\frontend\src\app\main" />
+      <recent name="E:\nestJS\todoapp\frontend\src\app\components" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -96,7 +122,8 @@
       <workItem from="1751611411929" duration="4699000" />
       <workItem from="1751857180267" duration="8955000" />
       <workItem from="1751945360884" duration="292000" />
-      <workItem from="1751945665614" duration="18845000" />
+      <workItem from="1751945665614" duration="19007000" />
+      <workItem from="1752028714909" duration="25831000" />
     </task>
     <servers />
   </component>

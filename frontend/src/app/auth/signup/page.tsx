@@ -1,18 +1,25 @@
 'use client'
-import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
-import {Label} from "@/components/ui/label";
-import {Input} from "@/components/ui/input";
-import {Button} from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import {useState} from "react";
-import {AiFillEye, AiFillEyeInvisible, AiOutlineEyeInvisible} from "react-icons/ai";
+import { useEffect, useState } from "react";
+import { AiFillEye, AiFillEyeInvisible, AiOutlineEyeInvisible } from "react-icons/ai";
 import * as z from "zod/v4";
-import {register} from "@/services/auth.api";
+import { register } from "@/services/auth.api";
 import toast from "react-hot-toast";
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useSelector } from "react-redux";
 
 export default function SignupPage() {
     const router = useRouter();
+    const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn);
+    useEffect(() => {
+        if (isLoggedIn)
+            router.push('/')
+    }, [isLoggedIn, router])
+
     const [showPassword, setShowPassword] = useState(false);
     const [dataForm, setDataForm] = useState({
         fullName: '',
@@ -29,10 +36,10 @@ export default function SignupPage() {
     })
 
     const registerSchema = z.object({
-        fullName: z.string().nonempty({message: 'Fullname is required'}),
-        email: z.string().nonempty({message: 'Email is required'}).email({message: 'Invalid email format'}),
-        password: z.string().nonempty({message: 'Password is required'}).min(8, {message: 'Password must be at least 8 characters long'}),
-        confirmPassword: z.string().nonempty({message: 'Confirm password is required'}).min(8, {message: 'Confirm password must be at least 8 characters long'}),
+        fullName: z.string().nonempty({ message: 'Fullname is required' }),
+        email: z.string().nonempty({ message: 'Email is required' }).email({ message: 'Invalid email format' }),
+        password: z.string().nonempty({ message: 'Password is required' }).min(8, { message: 'Password must be at least 8 characters long' }),
+        confirmPassword: z.string().nonempty({ message: 'Confirm password is required' }).min(8, { message: 'Confirm password must be at least 8 characters long' }),
     }).refine((data) => data.password === data.confirmPassword, {
         path: ['confirmPassword'], // Gắn lỗi vào trường này
         message: 'Password and confirm password must be the same'
@@ -57,8 +64,8 @@ export default function SignupPage() {
                 confirmPassword: ''
             })
 
-            const {confirmPassword, ...data} = dataForm;
-            register({...data})
+            const { confirmPassword, ...data } = dataForm;
+            register({ ...data })
             router.push('/auth/login')
         }
     }
@@ -81,7 +88,7 @@ export default function SignupPage() {
                                     Fullname
                                 </Label>
                                 <Input
-                                    onChange={(e) => setDataForm({...dataForm, fullName: e.target.value})}
+                                    onChange={(e) => setDataForm({ ...dataForm, fullName: e.target.value })}
                                     value={dataForm.fullName}
                                     type="text"
                                     placeholder="your.email@example.com"
@@ -95,7 +102,7 @@ export default function SignupPage() {
                                     Email Address
                                 </Label>
                                 <Input
-                                    onChange={(e) => setDataForm({...dataForm, email: e.target.value})}
+                                    onChange={(e) => setDataForm({ ...dataForm, email: e.target.value })}
                                     value={dataForm.email}
                                     type="text"
                                     placeholder="your.email@example.com"
@@ -115,7 +122,7 @@ export default function SignupPage() {
                                 </Label>
                                 <div className="relative">
                                     <Input
-                                        onChange={(e) => setDataForm({...dataForm, password: e.target.value})}
+                                        onChange={(e) => setDataForm({ ...dataForm, password: e.target.value })}
                                         value={dataForm.password}
                                         id="password"
                                         placeholder="Type your password here"
@@ -131,17 +138,17 @@ export default function SignupPage() {
                                         onClick={() => setShowPassword(!showPassword)}
                                         className="absolute top-1/2 right-3 -translate-y-1/2 text-gray-500 hover:text-gray-700"
                                     >
-                                        {showPassword ? <AiFillEyeInvisible/> : <AiFillEye/>}
+                                        {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
                                     </button>
                                 </div>
                             </div>
                             <div className="grid gap-2">
                                 <Label htmlFor="confirm-password"
-                                       className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                    className="text-sm font-medium text-gray-700 dark:text-gray-300">
                                     Confirm Password
                                 </Label>
                                 <Input
-                                    onChange={(e) => setDataForm({...dataForm, confirmPassword: e.target.value})}
+                                    onChange={(e) => setDataForm({ ...dataForm, confirmPassword: e.target.value })}
                                     value={dataForm.confirmPassword}
                                     id="confirm-password"
                                     placeholder="confirm your password here"

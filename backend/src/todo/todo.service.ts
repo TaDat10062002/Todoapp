@@ -8,7 +8,7 @@ import { handleError } from '../common/utils/error.handler';
 export class TodoService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async getTasksForUser(req: any, isDone: any) {
+  async getTasksForUser(req: any, status: any) {
     const user = await this.prisma.user.findUnique({
       where: {
         id: req.user.sub,
@@ -25,31 +25,45 @@ export class TodoService {
       throw new NotFoundException('User not found');
     }
 
-    const filter = !isDone ? undefined : isDone;
-
     const tasks = await this.prisma.todo.findMany({
       where: {
         userId: user.id,
         isDeleted: false,
-        isDone: filter,
+        ...(status && Number(status) !== 0 ? { statusId: Number(status) } : {}),
+      },
+      orderBy: {
+        priorityId: 'desc',
       },
       select: {
         id: true,
         title: true,
         desc: true,
-        isDone: true,
         dueDate: true,
+        priority: {
+          select: {
+            id: true,
+            name: true,
+            color: true,
+          },
+        },
+        status: {
+          select: {
+            id: true,
+            name: true,
+            color: true,
+          },
+        },
       },
     });
-
-    if (tasks.length === 0) throw new NotFoundException('Tasks not found');
-
+    
     return {
-      message: 'List of main',
-      data: {
-        user: user,
-        tasks: tasks,
-        totalTasks: tasks.length,
+      message: 'List of task',
+      user: user,
+      tasks,
+      summary: {
+        all: tasks.length,
+        pending: tasks.filter((task) => task.status.id === 1).length,
+        completed: tasks.filter((task) => task.status.id === 2).length,
       },
     };
   }
@@ -62,14 +76,10 @@ export class TodoService {
       data: {
         title: title,
         desc: desc,
-        userId: sub,
-        isDone: '0',
+        userId: Number(sub),
+        priorityId: 1,
+        statusId: 1,
         dueDate: new Date(dueDate).toISOString() || null,
-        user: {
-          connect: {
-            id: sub,
-          },
-        },
       },
     });
 
@@ -103,7 +113,6 @@ export class TodoService {
         data: {
           title: dto.title || task.title,
           desc: dto.desc || task.desc,
-          isDone: dto.isDone || task.isDone,
           updatedAt: new Date(Date.now()),
         },
       });

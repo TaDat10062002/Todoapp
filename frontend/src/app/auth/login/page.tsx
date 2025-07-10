@@ -8,20 +8,18 @@ import {Button} from "@/components/ui/button";
 import * as z from "zod/v4";
 import {login} from "@/services/auth.api";
 import {useDispatch, useSelector} from "react-redux";
-import axiosClient from "@/services/axiosClient";
 import {LOGIN} from "@/store/slices/authSlice";
 import {useRouter} from "next/navigation";
 import toast from 'react-hot-toast';
 
 export default function LoginPage() {
-    const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn);
     const router = useRouter();
-
+    const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn);
     useEffect(() => {
-        if (isLoggedIn) router.push('/');
-    }, [isLoggedIn, router]);
+        if (isLoggedIn)
+            router.push('/')
+    }, [isLoggedIn, router])
 
-    const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState({
         email: '',
         password: ''
@@ -56,7 +54,6 @@ export default function LoginPage() {
                 password: ''
             })
             const res = await login(dataForm);
-            toast.success('Login successfully');
             const payload = {
                 isLoggedIn: true,
                 loggedUser: res.data.loggedUser,

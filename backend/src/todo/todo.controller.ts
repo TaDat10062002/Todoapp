@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   Param,
+  Patch,
   Post,
   Put,
   Query,
@@ -17,7 +18,7 @@ import { UpdateTaskDto } from './dto/UpdateTaskDto';
 
 @Controller('api/todo')
 export class TodoController {
-  constructor(private readonly todoService: TodoService) {}
+  constructor(private readonly todoService: TodoService) { }
 
   @UseGuards(AuthGuard)
   @Get('')

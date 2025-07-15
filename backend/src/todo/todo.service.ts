@@ -6,7 +6,7 @@ import { handleError } from '../common/utils/error.handler';
 
 @Injectable()
 export class TodoService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) { }
 
   async getTasksForUser(req: any, status: any) {
     const user = await this.prisma.user.findUnique({
@@ -39,6 +39,7 @@ export class TodoService {
         title: true,
         desc: true,
         dueDate: true,
+        statusId: true,
         priority: {
           select: {
             id: true,
@@ -55,7 +56,7 @@ export class TodoService {
         },
       },
     });
-    
+
     return {
       message: 'List of task',
       user: user,
@@ -69,17 +70,16 @@ export class TodoService {
   }
 
   async createTask(dto: CreateTaskDto, req: any) {
-    const { title, desc, dueDate } = dto;
     const { sub } = req.user;
 
     await this.prisma.todo.create({
       data: {
-        title: title,
-        desc: desc,
+        title: '',
+        desc: dto.desc,
         userId: Number(sub),
         priorityId: 1,
         statusId: 1,
-        dueDate: new Date(dueDate).toISOString() || null,
+        dueDate: new Date().toISOString() || null,
       },
     });
 
@@ -110,10 +110,13 @@ export class TodoService {
         where: {
           id: Number(id),
         },
+
         data: {
-          title: dto.title || task.title,
-          desc: dto.desc || task.desc,
+          title: dto?.title || task?.title,
+          desc: dto?.desc || task?.desc,
           updatedAt: new Date(Date.now()),
+          statusId: dto?.statusId,
+          priorityId: dto?.priorityId
         },
       });
 

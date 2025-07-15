@@ -5,28 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76171ef3-79fd-4757-884d-ffe7c776fc34" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/AddTask.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/TaskList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/authAxiosClient.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/todo.api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/backend/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/todo/dto/CreateTaskDto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/todo/dto/CreateTaskDto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/todo/todo.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/todo/todo.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/todo/todo.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/todo/todo.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/auth/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/auth/login/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/auth/signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/auth/signup/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/auth/ProtectedRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/auth/ProtectedRoute.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/todo/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/todo/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Spinner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Spinner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useLogin.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/auth.api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/auth.api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/axiosClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/axiosClient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/store/slices/authSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/slices/authSlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +110,9 @@
       <workItem from="1752134604587" duration="292000" />
       <workItem from="1752134935437" duration="376000" />
       <workItem from="1752135328174" duration="1712000" />
-      <workItem from="1752137068550" duration="9306000" />
+      <workItem from="1752137068550" duration="9496000" />
+      <workItem from="1752202964515" duration="523000" />
+      <workItem from="1752204363664" duration="204000" />
     </task>
     <servers />
   </component>

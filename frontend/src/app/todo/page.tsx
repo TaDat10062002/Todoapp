@@ -1,9 +1,9 @@
 'use client';
-import {useSelector} from "react-redux";
-import {useEffect, useState} from "react";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import Spinner from "@/components/Spinner";
-import {getSummary, getTasks} from "@/services/todo.api";
+import { getSummary, getTasks, taskPriority, taskStatus } from "@/services/todo.api";
 import TaskList from "@/components/TaskList";
 import AddTask from "@/components/AddTask";
 
@@ -43,41 +43,55 @@ export default function HomePage() {
         }
     }, [loggedUser]);
 
+
+    const [shouldFetch, setShouldFetch] = useState(false)
+
+
     useEffect(() => {
         fetchTasks();
-    }, [tasks, activeTab]);
+        if (shouldFetch) {
+            fetchTasks();
+            setShouldFetch(false)
+        }
+    }, [activeTab, shouldFetch]);
 
     const fetchTasks = async () => {
         setTasks(await getTasks(activeTab));
         setSummary(await getSummary());
     }
 
-    if (!isClient) return <Spinner/>
+
+    if (!isClient) return <Spinner />
 
     return (
         <>
-            <main className="w-3/5 mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div className={`Greeting text-center text-2xl font-bold text-gray-900 mb-5`}>
+            <main className="w-3/5 mx-auto px-4 sm:px-6 lg:px-8 py-8 max-md:w-md max-sm:w-sm">
+                <div className={`Greeting text-center text-2xl font-bold text-gray-900 mb-5 max-md:text-red-500`}>
                     <div className={`Greeting-content`}>Goodmorning {loggedUser?.fullName || ''}</div>
-                    <span className={`block`}>You have {summary?.all} tasks left today</span>
+
+                    {
+                        summary?.pending === 0 ?
+                            <span className={`block`}>You did it 😄</span> : <span className={`block`}>You have {summary?.pending} tasks left today</span>
+                    }
+
                 </div>
 
                 {/*// Add task*/}
-                <AddTask/>
+                <AddTask setShouldFetch={setShouldFetch} />
 
                 {/*tab status */}
                 <div
                     className={`task-status flex justify-between bg-gray-50 shadow-xl m-5 p-2 rounded-xl cursor-pointer`}>
                     <button onClick={() => setActiveTab('0')}
-                            className={` ${activeTab === '0' ? 'text-blue-600 flex-1 bg-white py-2 rounded' : 'flex-1 py-2'}`}
+                        className={` ${activeTab === '0' ? 'text-blue-600 flex-1 bg-white py-2 rounded' : 'flex-1 py-2'}`}
                     >All tasks ({summary?.all})
                     </button>
                     <button onClick={() => setActiveTab('1')}
-                            className={` ${activeTab === '1' ? 'text-blue-600 flex-1 bg-white py-2 rounded' : 'flex-1 py-2'}`}
+                        className={` ${activeTab === '1' ? 'text-blue-600 flex-1 bg-white py-2 rounded' : 'flex-1 py-2'}`}
                     >Pending ({summary?.pending})
                     </button>
                     <button onClick={() => setActiveTab('2')}
-                            className={` ${activeTab === '2' ? 'text-blue-600 flex-1 bg-white py-2 rounded' : 'flex-1 py-2'}`}
+                        className={` ${activeTab === '2' ? 'text-blue-600 flex-1 bg-white py-2 rounded' : 'flex-1 py-2'}`}
                     >Completed ({summary?.completed})
                     </button>
                 </div>
@@ -85,33 +99,37 @@ export default function HomePage() {
                 {/*List of tasks */}
                 <div className="tasks-section m-5 bg-white shadow-xl rounded-xl p-5">
                     {
-                        tasks.length > 0
+                        tasks?.length > 0
                             ?
-                            <TaskList tasks={tasks} activeTab={activeTab}/>
+                            <TaskList
+                                tasks={tasks}
+                                activeTab={activeTab}
+                                setShouldFetch={setShouldFetch}
+                            />
                             : <div className="text-center text-gray-500">No tasks found</div>
                     }
                 </div>
 
-                {/*summary */}
-                {/*<div className={`task-summary`}>*/}
-                {/*    <div className="mt-8 m-5 grid grid-cols-1 sm:grid-cols-3 gap-4">*/}
-                {/*        <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20">*/}
-                {/*            <div className="text-2xl font-bold text-blue-600">{22}</div>*/}
-                {/*            <div className="text-sm text-gray-600">Tổng số việc</div>*/}
-                {/*        </div>*/}
-                {/*        <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20">*/}
-                {/*            <div*/}
-                {/*                className="text-2xl font-bold text-green-600">{3}</div>*/}
-                {/*            <div className="text-sm text-gray-600">Đã hoàn thành</div>*/}
-                {/*        </div>*/}
-                {/*        <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20">*/}
-                {/*            <div*/}
-                {/*                className="text-2xl font-bold text-orange-600">{3}</div>*/}
-                {/*            <div className="text-sm text-gray-600">Còn lại</div>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
-            </main>
+                {/*summary*/}
+                <div className={`task-summary`}>
+                    <div className="mt-8 m-5 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                            <div className="text-2xl font-bold text-blue-600">{summary?.all}</div>
+                            <div className="text-sm text-gray-600">Tổng số việc</div>
+                        </div>
+                        <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                            <div
+                                className="text-2xl font-bold text-green-600">{summary?.completed}</div>
+                            <div className="text-sm text-gray-600">Đã hoàn thành</div>
+                        </div>
+                        <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                            <div
+                                className="text-2xl font-bold text-orange-600">{summary?.pending}</div>
+                            <div className="text-sm text-gray-600">Còn lại</div>
+                        </div>
+                    </div>
+                </div>
+            </main >
         </>
     )
 }
